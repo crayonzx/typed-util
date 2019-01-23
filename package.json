@@ -1,0 +1,8 @@
+{
+  "name": "@types/antv__util",
+  "version": "1.0.0",
+  "description": "Type definitions for @antv/util",
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "license": "MIT"
+}
