@@ -50,7 +50,7 @@ declare module '@antv/util/lib/type/is-object' {
    * isObject(Function) => true
    * isObject(null) => false
    */
-  const isObject: <T extends object>(value: any) => value is T;
+  const isObject: <T extends object = { [x: string]: any }>(value: any) => value is T;
   export = isObject;
 }
 declare module '@antv/util/lib/type/is-object-like' {

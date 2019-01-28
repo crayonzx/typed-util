@@ -1,6 +1,13 @@
 // @antv/util/lib/dom
 declare module '@antv/util/lib/dom/create-dom' {
-  const createDom: (domStr: any) => any;
+  const createDom: <
+    K extends keyof HTMLElementTagNameMap | undefined = undefined,
+    T extends string = string
+  >(
+    domStr: HTMLElement | T
+  ) => K extends undefined
+    ? (T extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[T] : HTMLElement)
+    : HTMLElementTagNameMap[K];
   export = createDom;
 }
 declare module '@antv/util/lib/dom/modify-css' {
@@ -23,7 +30,7 @@ declare module '@antv/util/lib/dom/add-event-listener' {
   export = addEventListener;
 }
 declare module '@antv/util/lib/dom/get-bounding-client-rect' {
-  const getBoundingClientRect: (node: any, defaultValue: any) => any;
+  const getBoundingClientRect: (node: any, defaultValue?: any) => any;
   export = getBoundingClientRect;
 }
 declare module '@antv/util/lib/dom/get-height' {
@@ -33,7 +40,7 @@ declare module '@antv/util/lib/dom/get-height' {
    * @param  {Number} defaultValue 默认值
    * @return {Number} 高度
    */
-  const getHeight: (el: HTMLElement, defaultValue: number) => number;
+  const getHeight: (el: HTMLElement, defaultValue?: number) => number;
   export = getHeight;
 }
 declare module '@antv/util/lib/dom/get-outer-height' {
@@ -43,7 +50,7 @@ declare module '@antv/util/lib/dom/get-outer-height' {
    * @param  {Number} defaultValue 默认值
    * @return {Number} 高度
    */
-  const getOuterHeight: (el: HTMLElement, defaultValue: number) => number;
+  const getOuterHeight: (el: HTMLElement, defaultValue?: number) => number;
   export = getOuterHeight;
 }
 declare module '@antv/util/lib/dom/get-outer-width' {
@@ -53,7 +60,7 @@ declare module '@antv/util/lib/dom/get-outer-width' {
    * @param  {Number} defaultValue 默认值
    * @return {Number} 宽度
    */
-  const getOuterWidth: (el: HTMLElement, defaultValue: number) => number;
+  const getOuterWidth: (el: HTMLElement, defaultValue?: number) => number;
   export = getOuterWidth;
 }
 declare module '@antv/util/lib/dom/get-ratio' {
@@ -68,7 +75,7 @@ declare module '@antv/util/lib/dom/get-style' {
    * @param  {Any} defaultValue 默认值
    * @return {String} 属性值
    */
-  const getStyle: (dom: any, name: string, defaultValue: any) => string;
+  const getStyle: (dom: any, name: string, defaultValue?: any) => string;
   export = getStyle;
 }
 declare module '@antv/util/lib/dom/get-width' {
@@ -78,7 +85,7 @@ declare module '@antv/util/lib/dom/get-width' {
    * @param  {Number} defaultValue 默认值
    * @return {Number} 宽度
    */
-  const getWidth: (el: HTMLElement, defaultValue: number) => number;
+  const getWidth: (el: HTMLElement, defaultValue?: number) => number;
   export = getWidth;
 }
 
