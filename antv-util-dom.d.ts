@@ -5,9 +5,9 @@ declare module '@antv/util/lib/dom/create-dom' {
     T extends string = string
   >(
     domStr: HTMLElement | T
-  ) => K extends undefined
-    ? (T extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[T] : HTMLElement)
-    : HTMLElementTagNameMap[K];
+  ) => K extends keyof HTMLElementTagNameMap
+    ? HTMLElementTagNameMap[K]
+    : (T extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[T] : HTMLElement);
   export = createDom;
 }
 declare module '@antv/util/lib/dom/modify-css' {
