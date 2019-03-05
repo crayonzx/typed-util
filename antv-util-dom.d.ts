@@ -1,9 +1,6 @@
 // @antv/util/lib/dom
 declare module '@antv/util/lib/dom/create-dom' {
-  const createDom: <
-    K extends keyof HTMLElementTagNameMap | undefined = undefined,
-    T extends string = string
-  >(
+  const createDom: <K extends keyof HTMLElementTagNameMap | '' = '', T extends string = string>(
     domStr: HTMLElement | T
   ) => K extends keyof HTMLElementTagNameMap
     ? HTMLElementTagNameMap[K]
