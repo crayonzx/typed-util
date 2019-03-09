@@ -54,7 +54,7 @@ declare module '@antv/util/lib/extend' {
       GUtil.NewReturnType<GUtil.ToClassType<T>>,
       V
     >;
-    superclass: GUtil.ProtoType<U>;
+    superclass: U;
   } & GUtil.ExcludeFunctionType<W extends null | undefined ? {} : W>;
   export = extend;
 }
