@@ -1,6 +1,6 @@
 // @antv/util/lib/path
 declare module '@antv/util/lib/path/catmull-rom2bezier' {
-  const catmullRom2bezier: (crp: any, z: any) => (string | number)[][];
+  const catmullRom2bezier: (crp: number[], z: boolean) => GCommon.SVGPath;
   export = catmullRom2bezier;
 }
 declare module '@antv/util/lib/path/fill-path' {
@@ -16,33 +16,30 @@ declare module '@antv/util/lib/path/format-path' {
   export = formatPath;
 }
 declare module '@antv/util/lib/path/path-intersection' {
-  const pathIntersection: (path1: any, path2: any) => number | any[];
+  const pathIntersection: {
+    (path1: GCommon.SVGPathOrStr, path2: GCommon.SVGPathOrStr): GCommon.Point[];
+    (path1: GCommon.SVGPathOrStr, path2: GCommon.SVGPathOrStr, justCount: true): number;
+  };
   export = pathIntersection;
 }
 declare module '@antv/util/lib/path/parse-path-array' {
-  const parsePathArray: (path: any) => any;
+  const parsePathArray: (path: GCommon.SVGPath) => string;
   export = parsePathArray;
 }
 declare module '@antv/util/lib/path/parse-path-string' {
-  const parsePathString: (pathString: any) => any;
+  const parsePathString: (pathString: GCommon.SVGPathOrStr) => GCommon.SVGPath;
   export = parsePathString;
 }
 declare module '@antv/util/lib/path/path2absolute' {
-  const pathToAbsolute: (pathArray: any) => (string | number)[][];
+  const pathToAbsolute: (pathArray: GCommon.SVGPathOrStr) => GCommon.SVGPath;
   export = pathToAbsolute;
 }
 declare module '@antv/util/lib/path/path2curve' {
-  const pathTocurve: (path: any, path2: any) => (string | number)[][] | (string | number)[][][];
+  const pathTocurve: (path: GCommon.SVGPathOrStr, path2?: GCommon.SVGPathOrStr) => GCommon.SVGPath;
   export = pathTocurve;
 }
 declare module '@antv/util/lib/path/rect-path' {
-  const rectPath: (
-    x: string | number,
-    y: string | number,
-    w: string | number,
-    h: string | number,
-    r: string | number
-  ) => (string | number)[][];
+  const rectPath: (x: number, y: number, w: number, h: number, r?: number) => GCommon.SVGPath;
   export = rectPath;
 }
 

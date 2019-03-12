@@ -9,4 +9,6 @@
 /// <reference path='./antv-util-string.d.ts' />
 /// <reference path='./antv-util-type.d.ts' />
 /// <reference path='./antv-util.d.ts' />
+
+/// <reference path='./gcommon-global.d.ts' />
 /// <reference path='./gutil-global.d.ts' />
