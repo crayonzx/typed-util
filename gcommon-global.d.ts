@@ -35,7 +35,7 @@ declare namespace GCommon {
     type L = ['L' | 'l', number, number];
     /** horizontal line to: "H x" or "h dx" */
     type H = ['H' | 'h', number];
-    /** vertical line to: "V x" or "v dx" */
+    /** vertical line to: "V y" or "v dy" */
     type V = ['V' | 'v', number];
     /** curve to: "C x1 y1, x2 y2, x y" or "c dx1 dy1, dx2 dy2, dx dy" */
     type C = ['C' | 'c', number, number, number, number, number, number];
