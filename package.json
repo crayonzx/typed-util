@@ -1,8 +1,28 @@
 {
   "name": "@types/antv__util",
   "version": "1.0.0",
-  "description": "Type definitions for @antv/util",
-  "types": "index.d.ts",
-  "typings": "index.d.ts",
-  "license": "MIT"
+  "description": "TypeScript definitions for @antv/util",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "crayonzx",
+      "url": "https://github.com/crayonzx",
+      "githubUsername": "crayonzx"
+    },
+    {
+      "name": "Harpes",
+      "url": "https://github.com/Harpes",
+      "githubUsername": "Harpes"
+    }
+  ],
+  "main": "",
+  "types": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crayonzx/types-antv-util.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "typesPublisherContentHash": "",
+  "typeScriptVersion": "3.0"
 }
