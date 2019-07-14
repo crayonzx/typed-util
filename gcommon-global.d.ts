@@ -53,19 +53,11 @@ declare namespace GCommon {
     type A = ['A' | 'a', number, number, number, number, number, number, number];
     /** closepath: "Z" or "z" */
     type Z = ['Z' | 'z'];
+
+    type CmdType = Cmd[0];
+    type Cmd = M | L | H | V | C | S | Q | T | A | Z;
   }
-  type SVGPath = Array<
-    | SVGPath.M
-    | SVGPath.L
-    | SVGPath.H
-    | SVGPath.V
-    | SVGPath.C
-    | SVGPath.S
-    | SVGPath.Q
-    | SVGPath.T
-    | SVGPath.A
-    | SVGPath.Z
-  >;
+  type SVGPath = Array<SVGPath.Cmd>;
 
   type SVGPathOrStr = SVGPath | string;
 
