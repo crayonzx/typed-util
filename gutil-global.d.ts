@@ -4,7 +4,7 @@ declare namespace GUtil {
     ? T
     : (new (...args: ArgsType<T>) => {}) & ExcludeFunctionType<T>;
 
-  /** 溢出接口 T 中的 () => any 和 new () => any */
+  /** 排除接口 T 中的 () => any 和 new () => any */
   type ExcludeFunctionType<T> = Overwrite<T, {}>;
 
   type FunctionType = (...args: any[]) => any;
@@ -54,6 +54,12 @@ declare namespace GUtil {
     ? I
     : never;
 
+  /**
+   * Checks if a type is a union type.
+   * @returns true or false
+   */
+  type IsUnion<T> = [T] extends [UnionToIntersection<T>] ? false : true;
+
   /** 提取联合类型中每个类型的某些属性类型 */
   type UnionPick<T, K extends string> = T extends {} ? (K extends keyof T ? T[K] : {}) : never;
 
@@ -63,4 +69,9 @@ declare namespace GUtil {
   >
     ? UnionToIntersection<K extends string ? UnionPick<U, K> : U>
     : never;
+
+  /** Used only for typings of subclass.superclass when util.extend(subclass, superclass) */
+  function extendSuperclass<T extends NewFunctionType>(
+    superclass: T
+  ): ProtoType<T> & { prototype: ProtoType<T>; constructor: Exclude<T, keyof T> };
 }
