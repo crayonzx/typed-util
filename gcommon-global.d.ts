@@ -25,6 +25,9 @@ declare namespace GCommon {
 
     /** 线型 */
     lineDash?: number | number[];
+
+    /** 鼠标指针 */
+    cursor?: string;
   };
 
   /** [SVG Path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) */
