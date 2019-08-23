@@ -25,6 +25,8 @@ declare namespace GCommon {
 
     /** 线型 */
     lineDash?: number | number[];
+    /** 线宽 */
+    lineWidth?: number;
 
     /** 鼠标指针 */
     cursor?: string;
